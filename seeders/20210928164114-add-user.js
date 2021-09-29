@@ -12,7 +12,6 @@ async function hash(password) {
 }
 
 module.exports = {
-  ROLE: ROLE,
   up: async (queryInterface, Sequelize) => {
     const data = [
       {
@@ -30,10 +29,10 @@ module.exports = {
         updatedAt: new Date(),
       },
     ];
-    return await queryInterface.bulkInsert("User", data, {});
+    return await queryInterface.bulkInsert("Users", data, {});
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkDelete("User", null, {});
+    await queryInterface.bulkDelete("Users", null, {});
   },
 };
